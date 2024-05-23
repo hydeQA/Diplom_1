@@ -23,4 +23,12 @@ class TestBurger:
         assert cosmic_burger.ingredients[0].name == 'Соус Spicy-X'
         assert cosmic_burger.ingredients[0].price == 90
 
+    def test_remove_ingredient(self, cosmic_burger):
+        mock_ingredient = Mock(spec=Ingredient)
+        mock_ingredient.type = 'Соус'
+        mock_ingredient.name = 'Соус Spicy-X'
+        mock_ingredient.price = 90
+        cosmic_burger.add_ingredient(mock_ingredient)
+        cosmic_burger.remove_ingredient(0)
+        assert len(cosmic_burger.ingredients) == 0
 
