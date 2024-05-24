@@ -1,13 +1,14 @@
 import pytest
-import bun
+from bun import Bun
 from burger import Burger
+from data import NameOfIngridients
 
 
 @pytest.fixture
 def kratornaya_bulka():
-    name = 'Краторная булка N-200i'
-    price = 1255
-    return bun.Bun(name, price)
+    name = NameOfIngridients.BUN_ONE
+    price = NameOfIngridients.PRICE_TWO
+    return Bun(name, price)
 
 
 @pytest.fixture
