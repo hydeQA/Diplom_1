@@ -7,7 +7,7 @@ from data import NameOfIngridients
 @pytest.fixture
 def kratornaya_bulka():
     name = NameOfIngridients.BUN_ONE
-    price = NameOfIngridients.PRICE_TWO
+    price = NameOfIngridients.PRICE_BUN
     return Bun(name, price)
 
 

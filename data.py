@@ -11,3 +11,4 @@ class NameOfIngridients:
 
     PRICE_ONE = 90
     PRICE_TWO = 4142
+    PRICE_BUN = 1255
