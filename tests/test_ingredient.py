@@ -1,4 +1,3 @@
-import pytest
 from ingredient import Ingredient
 from data import NameOfIngridients
 
