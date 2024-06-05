@@ -12,17 +12,12 @@ class TestBurger:
 
 
     def test_add_ingredient(self):
-        mock_ingredient = Mock()
+        mock_ingredient_1 = Mock()
+        mock_ingredient_2 = Mock()
         cosmic_burger = Burger()
-        mock_ingredient.type = NameOfIngridients.TYPE_ONE
-        mock_ingredient.name = NameOfIngridients.NAME_ONE
-        mock_ingredient.price = NameOfIngridients.PRICE_ONE
-        cosmic_burger.add_ingredient(mock_ingredient)
-        assert len(cosmic_burger.ingredients) == 1
-        assert cosmic_burger.ingredients[0] == mock_ingredient
-        assert cosmic_burger.ingredients[0].type == NameOfIngridients.TYPE_ONE
-        assert cosmic_burger.ingredients[0].name == NameOfIngridients.NAME_ONE
-        assert cosmic_burger.ingredients[0].price == NameOfIngridients.PRICE_ONE
+        cosmic_burger.add_ingredient(mock_ingredient_1)
+        cosmic_burger.add_ingredient(mock_ingredient_2)
+        assert cosmic_burger.ingredients == [mock_ingredient_1, mock_ingredient_2]
 
 
     def test_remove_ingredient(self):
@@ -38,24 +33,12 @@ class TestBurger:
 
     def test_move_ingredient(self):
         cosmic_burger = Burger()
-        mock_ingredient = Mock()
+        mock_ingredient_1 = Mock()
         mock_ingredient_2 = Mock()
-        mock_ingredient.type = NameOfIngridients.TYPE_ONE
-        mock_ingredient_2.type = NameOfIngridients.TYPE_TWO
-        mock_ingredient.name = NameOfIngridients.NAME_ONE
-        mock_ingredient_2.name = NameOfIngridients.NAME_TWO
-        mock_ingredient.price = NameOfIngridients.PRICE_ONE
-        mock_ingredient_2.price = NameOfIngridients.PRICE_TWO
-        cosmic_burger.add_ingredient(mock_ingredient)
+        cosmic_burger.add_ingredient(mock_ingredient_1)
         cosmic_burger.add_ingredient(mock_ingredient_2)
         cosmic_burger.move_ingredient(0, 1)
-        assert len(cosmic_burger.ingredients) == 2
-        assert cosmic_burger.ingredients[0].type == NameOfIngridients.TYPE_TWO
-        assert cosmic_burger.ingredients[0].name == NameOfIngridients.NAME_TWO
-        assert cosmic_burger.ingredients[0].price == NameOfIngridients.PRICE_TWO
-        assert cosmic_burger.ingredients[1].type == NameOfIngridients.TYPE_ONE
-        assert cosmic_burger.ingredients[1].name == NameOfIngridients.NAME_ONE
-        assert cosmic_burger.ingredients[1].price == NameOfIngridients.PRICE_ONE
+        assert cosmic_burger.ingredients == [mock_ingredient_2, mock_ingredient_1]
 
 
     def test_get_price(self):
