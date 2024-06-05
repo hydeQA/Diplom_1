@@ -11,12 +11,6 @@ def kratornaya_bulka():
     price = NameOfIngridients.PRICE_BUN
     return Bun(name, price)
 
-
-@pytest.fixture
-def cosmic_burger():
-    return Burger()
-
-
 @pytest.fixture
 def space_ingredient():
     ingredient_type = NameOfIngridients.TYPE_ONE
